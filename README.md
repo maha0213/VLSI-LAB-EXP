@@ -1,10 +1,14 @@
-# VLSI-LAB-EXPERIMENTS
+# Exp no:1
+# Date:13/02/2024
+
+# SIMULATION AND IMPLEMENTATION OF LOGIC GATES,ADDERS AND SUBTRACTOR
+
 # AIM: To simulate and synthesis Logic Gates,Adders and Subtractor using Xilinx ISE.
 
-#APPARATUS REQUIRED: 
+# APPARATUS REQUIRED: 
 vivado 2023.2
 
-PROCEDURE: 
+# PROCEDURE: 
 STEP:1 Start the vivado software, Select and Name the New project.
 
 STEP:2 Select the device family, device, package and speed.
@@ -19,65 +23,33 @@ STEP:6 Click the simulation to simulate the program and give the inputs and veri
 
 STEP:7 compare the output with truth table. Logic Diagram :
 
-Logic Diagram :
+# Logic Diagram :
 
-Logic Gates:
+# Logic Gates:
 ![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/ee17970c-3ac9-4603-881b-88e2825f41a4)
 
+# CODE
 
-Half Adder:
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/0e1ecb96-0c25-4556-832b-aeeedfdfe7b9)
-
-
-Full adder:
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/9bb3964c-438f-469d-a3de-c1cca6f323fb)
-
-
-Half Subtractor:
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/731470b7-eb4e-49f8-8bb7-2994052a7184)
-
-
-
-Full Subtractor:
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/d66f874b-c1f2-44b3-a035-7149b56430c1)
-
-
-
-8 Bit Ripple Carry Adder
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/7385a408-40a5-4203-8050-b72818622d79)
-
-
-
-# VERILOG CODE:
-
-module logic(a,b,andgate,orgate,xorgate,nandgate,norgate,xnorgate,notgate );
-
+module logicgates(a,b,andgate,orgate,xorgate,nandgate,norgate,xnorgate,notgate);
 input a,b;
-
 output andgate,orgate,xorgate,nandgate,norgate,xnorgate,notgate;
-
 and(andgate,a,b);
-
 or(orgate,a,b);
-
 xor(xorgate,a,b);
-
-nand(nandgate,a,b);
-
+nand(nandgate,a,b);  
 nor(norgate,a,b);
-
 xnor(xnorgate,a,b);
-
 not(notgate,a);
-
 endmodule
 
-# HALF ADDER: module HalfAdder(a,b,sum,carry);
+# Output
+
+![image](https://github.com/maha0213/VLSI-LAB-EXP/assets/159602131/9d0d79a1-2590-4ae3-aeb6-d69c40d61aa3)
+
+
+# CODE
+
+module HalfAdder(a,b,sum,carry);
 
 input a,b;
 
@@ -88,8 +60,17 @@ xor (sum,a,b);
 and (carry,a,b);
 
 endmodule
+# OTUPUT
 
-# FULL ADDER: module FA(a,b,cin,sum,cout);
+![image](https://github.com/maha0213/VLSI-LAB-EXP/assets/159602131/69484bc1-3a98-4c30-bcd6-f8889d11f94c)
+
+# Full adder:
+
+![image](https://github.com/maha0213/VLSI-LAB-EXP/assets/159602131/61b1d9f6-f2d2-42ab-9d00-0a74b38097a7)
+
+# CODE
+
+ module FA(a,b,cin,sum,cout);
 
 input a,b,cin;
 
@@ -109,7 +90,17 @@ or g5(cout,w2,w3);
 
 endmodule
 
-#  HALF SUBTRACTOR: module halfsubtractor(a,b,diff,borrow);
+# OUTPUT
+
+![image](https://github.com/maha0213/VLSI-LAB-EXP/assets/159602131/fe7d05d9-5093-4655-83d2-7a6f64650c3b)
+
+# Half Subtractor:
+
+![image](https://github.com/maha0213/VLSI-LAB-EXP/assets/159602131/ed23d76c-da14-40f1-a445-bd94365ca67e)
+
+# CODE
+
+ module halfsubtractor(a,b,diff,borrow);
 
 input a,b;
 
@@ -121,7 +112,13 @@ and g2(borrow,~a,b);
 
 endmodule
 
-# FULL SUBTRACTOR: module full_sub(a,b,bin,diff,borrow);
+# Full Subtractor:
+
+![image](https://github.com/maha0213/VLSI-LAB-EXP/assets/159602131/bf2d77bb-ddb9-45a1-84e1-54aa6ece0c4d)
+
+# CODE
+
+module full_sub(a,b,bin,diff,borrow);
 
 input a,b,bin;
 
@@ -140,8 +137,15 @@ or g4(borrow,w2,w3);
 and g5(w3,~w1,bin);
 
 endmodule
+# OUTPUT
 
-# 8 BIT RIPPLE CARRY ADDER: module fa(a,b,c,sum,carry);
+
+![image](https://github.com/maha0213/VLSI-LAB-EXP/assets/159602131/57c3e385-34d2-4ef8-9881-6b6ef219d2e5)
+
+# 8 Bit Ripple Carry Adder
+# CODE
+
+ module fa(a,b,c,sum,carry);
 
 input a,b,c;
 
@@ -183,21 +187,9 @@ fa fa8(a[7],b[7],c7,sum[7],cout);
 
 endmodule
 
-# OUTPUT:
+# OUTPUT
 
-# LOGIC GATES:
-![image](https://github.com/maha0213/VLSI-LAB-EXP/assets/159602131/8e5e2c58-b193-44e9-af04-c8d75388b2be)
-# HALF ADDER:
-![image](https://github.com/maha0213/VLSI-LAB-EXP/assets/159602131/cc8b0521-0085-4707-a87a-5b33bfe50e75)
-# FULL ADDER:
-![image](https://github.com/maha0213/VLSI-LAB-EXP/assets/159602131/babc938b-1ded-4f25-bdcc-d0f95237380f)
-# HALF SUBTRACTOR:
-![image](https://github.com/maha0213/VLSI-LAB-EXP/assets/159602131/612026ea-2b72-4667-8096-9572fbc58f49)
-# FULL SUBTRACTOR:
-![image](https://github.com/maha0213/VLSI-LAB-EXP/assets/159602131/9ca3d51a-ad5d-4381-8e60-906e5753b580)
-# 8 BIT RIPPLE CARRY ADDER:
-![image](https://github.com/maha0213/VLSI-LAB-EXP/assets/159602131/376d8925-cbf3-4648-b89b-3f01aad37008)
-
+![image](https://github.com/maha0213/VLSI-LAB-EXP/assets/159602131/4b3b542e-11a3-449f-96d6-e4c42e97cd1a)
 
 # RESULT:
 Thus the simulation and synthesis of Logic Gates,Adders and Subtractors using vivado has been sucessfully executed and verified .
